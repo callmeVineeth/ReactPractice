@@ -1,0 +1,62 @@
+.App {
+  text-align: center;
+  background-color: rgb(44, 44, 55);
+  color: white;
+  padding: 12px;
+}
+.footer {
+  text-align: center;
+  background-color: rgb(44, 44, 55);
+  color: white;
+  padding: 12px;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+}
+.data {
+  background-color: bisque;
+  margin-top: 10px;
+}
+.card-container {
+  display: flex;
+  flex-wrap: nowrap;
+  overflow-x: auto;
+  padding: 20px;
+  gap: 20px;
+}
+.card {
+  flex: 0 0 auto;
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  width: 300px; /* Change as per your requirement */
+}
+
+.price {
+  color: grey;
+  font-size: 22px;
+}
+
+.card button {
+  border: none;
+  outline: 0;
+  padding: 12px;
+  color: white;
+  background-color: #000;
+  text-align: center;
+  cursor: pointer;
+  width: 100%;
+  font-size: 18px;
+}
+.card p {
+  font-size: 16px;
+  font-weight: 500;
+  font-family: Arial, Helvetica, sans-serif;
+}
+.card button:hover {
+  opacity: 0.7;
+}
