@@ -5,7 +5,7 @@ import CompA from "./Components/CompA/CompA";
 import CompC from "./Components/CompC/CompC";
 import UserDetails from "./Components/UserDetails/UserDetails";
 import React, { useState, createContext } from "react";
-import { Route, Router } from "react-router-dom";
+import { Route, BrowserRouter as Router, Routes } from "react-router-dom";
 
 const nameState = createContext();
 const personState = createContext([]);
@@ -45,22 +45,39 @@ function App() {
     },
   ];
   const [personDetail, setpersonDetaile] = useState(person);
+  // Check if personId is present in the URL params
+  const isPersonIdPresent = window.location.pathname.includes("/persondetail");
+  console.log(isPersonIdPresent);
   return (
-    <>
+    <Router>
       <nameState.Provider value={{ name, setName }}>
         <personState.Provider value={personDetail}>
           <div>
             <div className="App">
               <Header />
             </div>
-            <CompA />
+            {isPersonIdPresent ? (
+              <Routes>
+                <Route path="/persondetail" element={<CompC />}>
+                  <Route path=":personId" element={<UserDetails />} />
+                </Route>
+              </Routes>
+            ) : (
+              <CompA />
+            )}
+
             <div className="footer">
               <Footer />
             </div>
           </div>
         </personState.Provider>
       </nameState.Provider>
-    </>
+      {/* <Routes>
+        <Route path="/persondetail" element={<CompC />}>
+          <Route path=":personId" element={<UserDetails />} />
+        </Route>
+      </Routes> */}
+    </Router>
   );
 }
 

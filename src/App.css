@@ -60,3 +60,7 @@
 .card button:hover {
   opacity: 0.7;
 }
+.userDetail {
+  background-color: aqua;
+  font-size: 27px;
+}
