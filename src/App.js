@@ -55,28 +55,20 @@ function App() {
           <div>
             <div className="App">
               <Header />
-            </div>
-            {isPersonIdPresent ? (
-              <Routes>
+            </div>             
+            
+            <Routes>
+              <Route path="/" element={<CompA />}></Route>
                 <Route path="/persondetail" element={<CompC />}>
                   <Route path=":personId" element={<UserDetails />} />
                 </Route>
               </Routes>
-            ) : (
-              <CompA />
-            )}
-
             <div className="footer">
               <Footer />
             </div>
           </div>
         </personState.Provider>
       </nameState.Provider>
-      {/* <Routes>
-        <Route path="/persondetail" element={<CompC />}>
-          <Route path=":personId" element={<UserDetails />} />
-        </Route>
-      </Routes> */}
     </Router>
   );
 }
